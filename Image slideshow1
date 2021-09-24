@@ -1,0 +1,253 @@
+package com.example.app2;
+
+import android.os.Bundle;
+import android.transition.ChangeScroll;
+import android.view.View;
+import android.widget.Button;
+import android.widget.ImageView;
+import android.widget.TextView;
+import android.app.Activity;
+import static android.R.attr.button;
+
+public class MainActivity extends Activity {
+    private static ImageView imageView;
+    private static Button forward;
+    private static Button backward;
+    //private static ChangeScroll front;
+    //private static ChangeScroll back;
+    private int image_next;
+
+    int[] images_array = {R.drawable.image2, R.drawable.image3, R.drawable.image4, R.drawable.image5_foreground};
+
+    @Override
+    protected void onCreate(Bundle savedInstanceState) {
+        super.onCreate(savedInstanceState);
+        setContentView(R.layout.activity_main);
+        clicknext();
+        clickprevious();
+    }
+
+    public void clicknext() {
+        imageView = (ImageView) findViewById(R.id.imageView);
+        forward = (Button) findViewById(R.id.forward);
+        forward.setOnClickListener(
+                new View.OnClickListener() {
+                    @Override
+                    public void onClick(View view) {
+                        image_next++;
+                        image_next = image_next % images_array.length;
+                        imageView.getImageAlpha(images_array[image_next]);
+                    }
+                }
+        );
+        /*forward.setOnScrollChangeListener(
+                new View.OnScrollChangeListener() {
+                    @Override
+                    public void onScrollChange(View view, int i, int i1, int i2, int i3) {
+
+
+                    }
+                }
+        );*/
+    }
+
+    public void clickprevious() {
+        imageView = (ImageView) findViewById(R.id.imageView);
+        backward = (Button) findViewById(R.id.backward);
+        backward.setOnClickListener(
+                new View.OnClickListener() {
+                    @Override
+                    public void onClick(View view) {
+                        image_next--;
+                        image_next = image_next % images_array.length;
+                        imageView.getImageAlpha(images_array[image_next]);
+                    }
+                }
+        );
+    }
+}
+
+
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="#FFFFFF"
+    android:backgroundTint="#854F5FB6"
+    tools:context=".MainActivity">
+
+    <EditText
+        android:id="@+id/three"
+        style="@style/Widget.AppCompat.EditText"
+        android:layout_width="263dp"
+        android:layout_height="128dp"
+        android:layout_marginStart="74dp"
+        android:layout_marginTop="81dp"
+        android:layout_marginBottom="522dp"
+        android:background="#00000000"
+        android:capitalize="characters"
+        android:clickable="false"
+        android:ems="10"
+        android:inputType="textPersonName"
+        android:selectAllOnFocus="false"
+        android:text="Landscape three"
+        android:textAppearance="@style/TextAppearance.AppCompat.Display1"
+        android:textColor="#00144C"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <EditText
+        android:id="@+id/four"
+        style="@style/Widget.AppCompat.EditText"
+        android:layout_width="263dp"
+        android:layout_height="128dp"
+        android:layout_marginStart="74dp"
+        android:layout_marginTop="81dp"
+        android:layout_marginBottom="522dp"
+        android:background="#00000000"
+        android:capitalize="characters"
+        android:clickable="false"
+        android:ems="10"
+        android:inputType="textPersonName"
+        android:selectAllOnFocus="false"
+        android:text="Landscape four"
+        android:textAppearance="@style/TextAppearance.AppCompat.Display1"
+        android:textColor="#00144C"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <EditText
+        android:id="@+id/one"
+        style="@style/Widget.AppCompat.EditText"
+        android:layout_width="263dp"
+        android:layout_height="128dp"
+        android:layout_marginStart="74dp"
+        android:layout_marginTop="81dp"
+        android:layout_marginBottom="522dp"
+        android:background="#00000000"
+        android:capitalize="characters"
+        android:clickable="false"
+        android:ems="10"
+        android:inputType="textPersonName"
+        android:selectAllOnFocus="false"
+        android:text="Landscape one"
+        android:textAppearance="@style/TextAppearance.AppCompat.Display1"
+        android:textColor="#00144C"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <EditText
+        android:id="@+id/two"
+        style="@style/Widget.AppCompat.EditText"
+        android:layout_width="263dp"
+        android:layout_height="128dp"
+        android:layout_marginStart="74dp"
+        android:layout_marginTop="81dp"
+        android:layout_marginBottom="522dp"
+        android:background="#00000000"
+        android:capitalize="characters"
+        android:clickable="false"
+        android:ems="10"
+        android:inputType="textPersonName"
+        android:selectAllOnFocus="false"
+        android:text="Landscape two"
+        android:textAppearance="@style/TextAppearance.AppCompat.Display1"
+        android:textColor="#00144C"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <Button
+        android:id="@+id/forward"
+        android:layout_width="101dp"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="288dp"
+        android:layout_marginTop="495dp"
+        android:layout_marginEnd="22dp"
+        android:layout_marginBottom="188dp"
+        android:text="FORWARD"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <Button
+        android:id="@+id/backward"
+        android:layout_width="101dp"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="29dp"
+        android:layout_marginTop="495dp"
+        android:layout_marginEnd="281dp"
+        android:layout_marginBottom="188dp"
+        android:text="BACKWARD"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <ImageView
+        android:id="@+id/image1"
+        android:layout_width="416dp"
+        android:layout_height="248dp"
+        android:layout_marginTop="189dp"
+        android:scaleType="fitCenter"
+        android:src="@drawable/image2"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <ImageView
+        android:id="@+id/image2"
+        android:layout_width="439dp"
+        android:layout_height="299dp"
+        android:layout_marginTop="170dp"
+        android:scaleType="fitCenter"
+        android:src="@mipmap/image3_fore"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <ImageView
+        android:id="@+id/image3"
+        android:layout_width="455dp"
+        android:layout_height="290dp"
+        android:layout_marginTop="170dp"
+        android:scaleType="fitCenter"
+        android:src="@mipmap/image4_foreground"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <ImageView
+        android:id="@+id/image4"
+        android:layout_width="466dp"
+        android:layout_height="245dp"
+        android:layout_marginTop="189dp"
+        android:scaleType="fitCenter"
+        android:src="@mipmap/image5_foreground"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <SeekBar
+        android:id="@+id/seekBar"
+        android:layout_width="360dp"
+        android:layout_height="30dp"
+        android:layout_marginStart="29dp"
+        android:layout_marginTop="436dp"
+        android:layout_marginEnd="22dp"
+        android:layout_marginBottom="265dp"
+        android:progress="0"
+        android:progressTint="#1E7000"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+
+</androidx.constraintlayout.widget.ConstraintLayout>
