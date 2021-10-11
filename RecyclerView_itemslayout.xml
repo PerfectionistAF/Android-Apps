@@ -1,0 +1,65 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="fill_parent"
+    android:layout_height="fill_parent"
+    android:orientation="vertical" >
+
+    <Toolbar
+        android:layout_width="fill_parent"
+        android:layout_height="wrap_content"
+        android:background="@color/colorPrimaryDark"
+        />
+    <ImageView
+        android:id="@+id/coffee"
+        android:layout_width="133dp"
+        android:layout_marginTop="30dp"
+        android:layout_marginStart="10dp"
+        android:layout_height="145dp"
+        android:src="@drawable/coffee" />
+    <TextView
+        android:id="@+id/COFFEE"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="10dp"
+        android:layout_marginStart="10dp"
+        android:text="Coffee"
+        android:textAppearance="@style/Theme.AppCompat.DayNight.DarkActionBar"
+        android:textSize="18dp" />
+
+    <ImageView
+        android:id="@+id/hotdrinks"
+        android:layout_width="133dp"
+        android:layout_height="145dp"
+        android:layout_marginTop="40dp"
+        android:layout_marginStart="10dp"
+        android:src="@drawable/hotdrinks" />
+    <TextView
+        android:id="@+id/textView2"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Hot Cocoa"
+        android:layout_marginTop="10dp"
+        android:layout_marginStart="10dp"
+        android:textAppearance="@style/Theme.AppCompat.DayNight.DarkActionBar"
+        android:textSize="18dp" />
+
+    <ImageView
+        android:id="@+id/colddrinks"
+        android:layout_width="133dp"
+        android:layout_height="145dp"
+        android:layout_marginTop="40dp"
+        android:layout_marginStart="10dp"
+        android:src="@drawable/colddrinks"
+         />
+    <TextView
+        android:id="@+id/textView"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Iced Tea"
+        android:layout_marginTop="10dp"
+        android:layout_marginStart="10dp"
+        android:textAppearance="@style/Theme.AppCompat.DayNight.DarkActionBar"
+        android:textSize="18dp" />
+
+
+</LinearLayout>
